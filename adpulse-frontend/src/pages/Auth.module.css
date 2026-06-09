@@ -1,0 +1,72 @@
+.page {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 2rem; position: relative; overflow: hidden;
+}
+.orb {
+  position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,255,71,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.card {
+  width: 100%; max-width: 420px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 2.5rem;
+  animation: fadeUp 0.5s ease both;
+}
+.logo {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-display); font-size: 1.1rem; font-weight: 800;
+  color: var(--text-primary); margin-bottom: 2rem; text-decoration: none;
+}
+.logoDot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--pulse); box-shadow: 0 0 10px var(--pulse);
+  animation: blink 1.5s ease infinite;
+}
+.title {
+  font-family: var(--font-display); font-size: 1.75rem; font-weight: 800;
+  letter-spacing: -0.5px; margin-bottom: 0.4rem;
+}
+.subtitle { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 2rem; }
+
+.form { display: flex; flex-direction: column; gap: 1.25rem; }
+.field { display: flex; flex-direction: column; gap: 0.5rem; }
+.field label { font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); }
+.field input {
+  padding: 0.75rem 1rem; border-radius: var(--radius);
+  background: var(--bg-secondary); border: 1px solid var(--border);
+  color: var(--text-primary); font-size: 0.95rem;
+  transition: border-color var(--transition);
+  outline: none;
+}
+.field input:focus { border-color: var(--pulse); }
+.field input::placeholder { color: var(--text-muted); }
+
+.btnSubmit {
+  width: 100%; padding: 0.875rem;
+  border-radius: var(--radius); border: none;
+  background: var(--pulse); color: #07070d;
+  font-size: 1rem; font-weight: 700;
+  cursor: pointer; transition: all var(--transition);
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 0.5rem;
+}
+.btnSubmit:hover:not(:disabled) { background: #d4ea3a; transform: translateY(-1px); }
+.btnSubmit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.spinner {
+  width: 20px; height: 20px; border-radius: 50%;
+  border: 2px solid rgba(7,7,13,0.3);
+  border-top-color: #07070d;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+.switchAuth {
+  text-align: center; margin-top: 1.5rem;
+  font-size: 0.875rem; color: var(--text-secondary);
+}
+.switchAuth a { color: var(--pulse); font-weight: 500; }
+.switchAuth a:hover { text-decoration: underline; }

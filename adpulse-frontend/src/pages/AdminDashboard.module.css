@@ -1,0 +1,36 @@
+.layout { display: flex; min-height: 100vh; }
+.main { flex: 1; padding: 2rem; max-width: calc(100vw - 240px); overflow-x: auto; }
+.title { font-family: var(--font-display); font-size: 1.75rem; font-weight: 800; margin-bottom: 2rem; }
+.adminStats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem; }
+.adminStat { padding: 1.5rem; border-radius: var(--radius); background: var(--bg-card); border: 1px solid var(--border); }
+.statValue { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; }
+.statLabel { font-size: 0.75rem; color: var(--text-muted); }
+.filterRow { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.filterBtn { padding: 0.4rem 0.875rem; border-radius: 999px; border: 1px solid var(--border); color: var(--text-secondary); font-size: 0.8rem; background: none; cursor: pointer; text-transform: capitalize; transition: all var(--transition); }
+.filterBtn:hover { border-color: var(--border-bright); color: var(--text-primary); }
+.filterActive { background: var(--pulse-dim); border-color: rgba(232,255,71,0.3); color: var(--pulse); }
+.loader { display: flex; justify-content: center; padding: 3rem; }
+.spinner { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--pulse-dim); border-top-color: var(--pulse); animation: spin 0.7s linear infinite; display: inline-block; }
+.table { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.tableHead { display: grid; grid-template-columns: 2fr 1.5fr 1fr 1fr 1fr 2fr; gap: 1rem; padding: 0.875rem 1.25rem; border-bottom: 1px solid var(--border); font-size: 0.75rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.tableRow { display: grid; grid-template-columns: 2fr 1.5fr 1fr 1fr 1fr 2fr; gap: 1rem; padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); align-items: center; font-size: 0.85rem; transition: background var(--transition); flex-wrap: wrap; }
+.tableRow:last-child { border-bottom: none; }
+.tableRow:hover { background: var(--bg-hover); }
+.campaignName { font-weight: 600; margin-bottom: 2px; }
+.campaignSub { font-size: 0.75rem; color: var(--text-muted); }
+.cell { color: var(--text-secondary); }
+.cellText { font-family: monospace; font-size: 0.8rem; }
+.payBadge { padding: 0.25rem 0.625rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; background: var(--red-dim); color: var(--red); }
+.paid { background: var(--electric-dim); color: var(--electric); }
+.statusBadge { padding: 0.25rem 0.625rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; text-transform: capitalize; background: color-mix(in srgb, var(--color) 12%, transparent); color: var(--color); }
+.actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.approveBtn { padding: 0.3rem 0.75rem; border-radius: 6px; background: var(--electric-dim); color: var(--electric); border: 1px solid rgba(77,255,212,0.2); font-size: 0.75rem; cursor: pointer; transition: all var(--transition); }
+.rejectBtn { padding: 0.3rem 0.75rem; border-radius: 6px; background: var(--red-dim); color: var(--red); border: 1px solid rgba(255,77,109,0.2); font-size: 0.75rem; cursor: pointer; }
+.pauseBtn { padding: 0.3rem 0.75rem; border-radius: 6px; background: var(--violet-dim); color: var(--violet); border: 1px solid rgba(181,123,255,0.2); font-size: 0.75rem; cursor: pointer; }
+.statsBtn { padding: 0.3rem 0.75rem; border-radius: 6px; background: var(--bg-hover); color: var(--text-secondary); border: 1px solid var(--border); font-size: 0.75rem; cursor: pointer; }
+.statsEdit { grid-column: 1 / -1; display: flex; gap: 0.5rem; align-items: center; padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--radius); margin-top: 0.5rem; }
+.statsEdit input { padding: 0.4rem 0.75rem; border-radius: 6px; background: var(--bg-card); border: 1px solid var(--border); color: var(--text-primary); font-size: 0.8rem; width: 130px; outline: none; }
+.statsEdit input:focus { border-color: var(--pulse); }
+.empty { padding: 3rem; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
+@media (max-width: 1100px) { .adminStats { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { .layout { flex-direction: column; } .main { max-width: 100%; } .tableHead { display: none; } .tableRow { grid-template-columns: 1fr 1fr; } }

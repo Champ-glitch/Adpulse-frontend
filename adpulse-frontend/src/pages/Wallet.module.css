@@ -1,0 +1,22 @@
+.layout { display: flex; min-height: 100vh; }
+.main { flex: 1; padding: 2rem; max-width: calc(100vw - 240px); }
+.title { font-family: var(--font-display); font-size: 1.75rem; font-weight: 800; margin-bottom: 2rem; letter-spacing: -0.5px; }
+.balanceCard { padding: 2rem; border-radius: var(--radius-lg); background: linear-gradient(135deg, rgba(232,255,71,0.08), rgba(77,255,212,0.05)); border: 1px solid rgba(232,255,71,0.2); margin-bottom: 2rem; max-width: 500px; }
+.balanceLabel { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+.balanceValue { font-family: var(--font-display); font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, var(--pulse), var(--electric)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.balanceNote { font-size: 0.775rem; color: var(--text-muted); margin-top: 0.5rem; }
+.topUpCard { padding: 2rem; border-radius: var(--radius-lg); background: var(--bg-card); border: 1px solid var(--border); max-width: 500px; }
+.topUpCard h2 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 800; margin-bottom: 1.5rem; }
+.field { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem; }
+.field label { font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); }
+.field input { padding: 0.75rem 1rem; border-radius: var(--radius); background: var(--bg-secondary); border: 1px solid var(--border); color: var(--text-primary); font-size: 0.9rem; outline: none; transition: border-color var(--transition); }
+.field input:focus { border-color: var(--pulse); }
+.chips { display: flex; gap: 0.5rem; }
+.chip { padding: 0.5rem 1rem; border-radius: 999px; border: 1px solid var(--border); background: var(--bg-secondary); color: var(--text-secondary); font-size: 0.8rem; cursor: pointer; transition: all var(--transition); }
+.chip:hover { border-color: var(--border-bright); }
+.chipActive { background: var(--pulse-dim); border-color: rgba(232,255,71,0.3); color: var(--pulse); }
+.topUpBtn { width: 100%; padding: 0.875rem; border-radius: var(--radius); background: var(--pulse); color: #07070d; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all var(--transition); display: flex; align-items: center; justify-content: center; border: none; }
+.topUpBtn:hover:not(:disabled) { background: #d4ea3a; transform: translateY(-1px); }
+.topUpBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+.spinner { width: 20px; height: 20px; border-radius: 50%; border: 2px solid rgba(7,7,13,0.3); border-top-color: #07070d; animation: spin 0.7s linear infinite; display: inline-block; }
+@media (max-width: 900px) { .layout { flex-direction: column; } .main { max-width: 100%; } }

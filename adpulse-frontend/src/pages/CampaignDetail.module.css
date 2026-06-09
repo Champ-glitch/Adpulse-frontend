@@ -1,0 +1,33 @@
+.layout { display: flex; min-height: 100vh; }
+.main { flex: 1; padding: 2rem; max-width: calc(100vw - 240px); }
+.loader { display: flex; justify-content: center; align-items: center; height: 50vh; }
+.spinner { width: 36px; height: 36px; border-radius: 50%; border: 3px solid var(--pulse-dim); border-top-color: var(--pulse); animation: spin 0.7s linear infinite; display: inline-block; }
+.header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.backBtn { display: inline-flex; align-items: center; gap: 6px; padding: 0.5rem 0.75rem; border-radius: 8px; background: var(--bg-card); border: 1px solid var(--border); color: var(--text-secondary); font-size: 0.875rem; transition: all var(--transition); flex-shrink: 0; margin-top: 4px; }
+.backBtn:hover { color: var(--text-primary); }
+.title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; }
+.meta { font-size: 0.8rem; color: var(--text-muted); }
+.statusBadge { padding: 0.4rem 1rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; text-transform: capitalize; background: color-mix(in srgb, var(--color) 12%, transparent); color: var(--color); display: inline-flex; align-items: center; gap: 6px; margin-left: auto; flex-shrink: 0; }
+.statusDot { width: 6px; height: 6px; border-radius: 50%; background: var(--color); animation: blink 1.5s ease infinite; }
+
+.paymentAlert { display: flex; gap: 1rem; align-items: flex-start; padding: 1.25rem; border-radius: var(--radius); background: var(--pulse-dim); border: 1px solid rgba(232,255,71,0.2); margin-bottom: 1.5rem; font-size: 0.875rem; }
+.paymentAlert strong { display: block; color: var(--pulse); margin-bottom: 2px; }
+.paymentAlert p { color: var(--text-secondary); }
+
+.statsGrid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+.statCard { padding: 1.25rem; border-radius: var(--radius); background: var(--bg-card); border: 1px solid var(--border); }
+.statValue { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; margin-bottom: 4px; }
+.statLabel { font-size: 0.7rem; color: var(--text-muted); }
+
+.chartCard { padding: 1.5rem; border-radius: var(--radius); background: var(--bg-card); border: 1px solid var(--border); margin-bottom: 1.5rem; }
+.cardTitle { font-family: var(--font-display); font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; }
+
+.detailsGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.detailCard { padding: 1.5rem; border-radius: var(--radius); background: var(--bg-card); border: 1px solid var(--border); }
+.detailCard h3 { font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-secondary); }
+.detailRow { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+.detailRow:last-child { border-bottom: none; }
+.detailRow span { color: var(--text-secondary); }
+
+@media (max-width: 1100px) { .statsGrid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px) { .layout { flex-direction: column; } .main { max-width: 100%; } .statsGrid { grid-template-columns: repeat(2, 1fr); } .detailsGrid { grid-template-columns: 1fr; } }
