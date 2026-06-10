@@ -8,10 +8,12 @@ import Dashboard from './pages/Dashboard'
 import NewCampaign from './pages/NewCampaign'
 import CampaignDetail from './pages/CampaignDetail'
 import AdminDashboard from './pages/AdminDashboard'
+import AdminAnalytics from './pages/AdminAnalytics'
 import Wallet from './pages/Wallet'
 import Portfolio from './pages/Portfolio'
 import Blog from './pages/Blog'
 import Affiliate from './pages/Affiliate'
+import SMM from './pages/SMM'
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth()
@@ -48,11 +50,13 @@ export default function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/affiliate" element={<Affiliate />} />
+          <Route path="/smm" element={<SMM />} />
           <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
           <Route path="/campaigns/new" element={<PrivateRoute><NewCampaign /></PrivateRoute>} />
           <Route path="/campaigns/:id" element={<PrivateRoute><CampaignDetail /></PrivateRoute>} />
           <Route path="/wallet" element={<PrivateRoute><Wallet /></PrivateRoute>} />
           <Route path="/admin" element={<PrivateRoute><AdminRoute><AdminDashboard /></AdminRoute></PrivateRoute>} />
+          <Route path="/admin/analytics" element={<PrivateRoute><AdminRoute><AdminAnalytics /></AdminRoute></PrivateRoute>} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

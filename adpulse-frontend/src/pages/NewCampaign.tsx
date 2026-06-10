@@ -6,7 +6,13 @@ import Sidebar from '../components/Sidebar'
 import { api } from '../lib/api'
 import styles from './NewCampaign.module.css'
 
-const PLATFORMS = ['TikTok', 'Instagram', 'Facebook', 'Twitter/X']
+const PLATFORMS = [
+  { name: 'TikTok', icon: '🎵', color: '#ff0050' },
+  { name: 'Instagram', icon: '📸', color: '#e1306c' },
+  { name: 'Facebook', icon: '👥', color: '#1877f2' },
+  { name: 'Twitter/X', icon: '🐦', color: '#1da1f2' },
+  { name: 'YouTube', icon: '▶️', color: '#ff0000' },
+]
 const AD_TYPES = ['Image', 'Video', 'Text/Sponsored']
 const STEPS = ['Details', 'Creative', 'Targeting', 'Budget & Pay']
 
@@ -121,10 +127,11 @@ export default function NewCampaign() {
                 <label>Platforms (select all)</label>
                 <div className={styles.chips}>
                   {PLATFORMS.map(p => (
-                    <button key={p} type="button"
-                      className={`${styles.chip} ${form.platforms.includes(p) ? styles.chipActive : ''}`}
-                      onClick={() => togglePlatform(p)}>
-                      {p}
+                    <button key={p.name} type="button"
+                      className={`${styles.chip} ${form.platforms.includes(p.name) ? styles.chipActive : ''}`}
+                      style={form.platforms.includes(p.name) ? { borderColor: p.color, color: p.color, background: p.color + '15' } : {}}
+                      onClick={() => togglePlatform(p.name)}>
+                      {p.icon} {p.name}
                     </button>
                   ))}
                 </div>

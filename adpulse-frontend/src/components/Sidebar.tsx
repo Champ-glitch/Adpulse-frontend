@@ -5,7 +5,14 @@ import styles from './Sidebar.module.css'
 const navItems = [
   { to: '/dashboard', icon: '⚡', label: 'Dashboard' },
   { to: '/campaigns/new', icon: '➕', label: 'New Campaign' },
+  { to: '/smm', icon: '🚀', label: 'SMM Panel' },
   { to: '/wallet', icon: '💳', label: 'Wallet' },
+  { to: '/affiliate', icon: '💰', label: 'Earn & Refer' },
+]
+
+const adminItems = [
+  { to: '/admin/analytics', icon: '📊', label: 'Site Analytics' },
+  { to: '/admin', icon: '🛡️', label: 'Campaigns' },
 ]
 
 export default function Sidebar() {
@@ -14,31 +21,40 @@ export default function Sidebar() {
 
   return (
     <aside className={styles.sidebar}>
-      <div className={styles.logo}>
+      <div className={styles.logo} onClick={() => navigate('/')}>
         <span className={styles.logoDot} />
         Ad-Pulse
       </div>
 
       <nav className={styles.nav}>
-        {navItems.map(item => (
-          <NavLink
-            key={item.to}
-            to={item.to}
-            className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
-            end={item.to === '/dashboard'}
-          >
-            <span className={styles.navIcon}>{item.icon}</span>
-            <span>{item.label}</span>
-          </NavLink>
-        ))}
+        <div className={styles.navGroup}>
+          {navItems.map(item => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
+              end={item.to === '/dashboard'}
+            >
+              <span className={styles.navIcon}>{item.icon}</span>
+              <span>{item.label}</span>
+            </NavLink>
+          ))}
+        </div>
+
         {user?.role === 'admin' && (
-          <NavLink
-            to="/admin"
-            className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
-          >
-            <span className={styles.navIcon}>🛡️</span>
-            <span>Admin</span>
-          </NavLink>
+          <div className={styles.navGroup}>
+            <div className={styles.navGroupLabel}>Admin</div>
+            {adminItems.map(item => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
+              >
+                <span className={styles.navIcon}>{item.icon}</span>
+                <span>{item.label}</span>
+              </NavLink>
+            ))}
+          </div>
         )}
       </nav>
 
