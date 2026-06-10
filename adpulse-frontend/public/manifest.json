@@ -1,0 +1,22 @@
+{
+  "name": "Ad-Pulse — Advertising Platform",
+  "short_name": "Ad-Pulse",
+  "description": "Run ads across TikTok, Instagram, Facebook & Twitter/X. Pay with M-Pesa or crypto.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07070d",
+  "theme_color": "#e8ff47",
+  "orientation": "portrait-primary",
+  "categories": ["business", "marketing", "productivity"],
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "screenshots": [
+    { "src": "/screenshot-mobile.png", "sizes": "390x844", "type": "image/png", "form_factor": "narrow" }
+  ],
+  "shortcuts": [
+    { "name": "New Campaign", "url": "/campaigns/new", "description": "Launch a new ad campaign" },
+    { "name": "Dashboard", "url": "/dashboard", "description": "View your campaign dashboard" }
+  ]
+}

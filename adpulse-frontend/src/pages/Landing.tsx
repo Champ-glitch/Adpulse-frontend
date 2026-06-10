@@ -52,7 +52,8 @@ export default function Landing() {
           <a href="#services">Services</a>
           <a href="#calculator">Calculator</a>
           <a href="#pricing">Pricing</a>
-          <a href="#faq">FAQ</a>
+          <a onClick={() => navigate('/portfolio')}>Results</a>
+          <a onClick={() => navigate('/affiliate')}>Earn</a>
         </div>
         <div className={styles.navActions}>
           <button className={styles.btnGhost} onClick={() => navigate('/login')}>Sign in</button>
@@ -368,6 +369,13 @@ export default function Landing() {
               <a href="#calculator">ROI Calculator</a>
             </div>
             <div className={styles.footerCol}>
+              <h4>Company</h4>
+              <a onClick={() => navigate('/portfolio')}>Case Studies</a>
+              <a onClick={() => navigate('/blog')}>Blog & Tips</a>
+              <a onClick={() => navigate('/affiliate')}>Affiliate Program</a>
+              <a href="#faq">FAQ</a>
+            </div>
+            <div className={styles.footerCol}>
               <h4>Account</h4>
               <a onClick={() => navigate('/register')}>Sign Up</a>
               <a onClick={() => navigate('/login')}>Sign In</a>
@@ -377,7 +385,6 @@ export default function Landing() {
               <h4>Contact</h4>
               <a href="mailto:anthonymwangangi4@gmail.com">Email Us</a>
               <a href={WA_LINK} target="_blank" rel="noopener noreferrer">WhatsApp</a>
-              <a href="#faq">FAQ</a>
             </div>
           </div>
         </div>

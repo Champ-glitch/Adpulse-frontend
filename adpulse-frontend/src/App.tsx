@@ -9,11 +9,14 @@ import NewCampaign from './pages/NewCampaign'
 import CampaignDetail from './pages/CampaignDetail'
 import AdminDashboard from './pages/AdminDashboard'
 import Wallet from './pages/Wallet'
+import Portfolio from './pages/Portfolio'
+import Blog from './pages/Blog'
+import Affiliate from './pages/Affiliate'
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth()
   if (loading) return (
-    <div style={{ display:'flex',alignItems:'center',justifyContent:'center',height:'100vh', background:'var(--bg-primary)' }}>
+    <div style={{ display:'flex',alignItems:'center',justifyContent:'center',height:'100vh',background:'var(--bg-primary)' }}>
       <div style={{ width:40,height:40,border:'3px solid var(--pulse-dim)',borderTopColor:'var(--pulse)',borderRadius:'50%',animation:'spin 0.8s linear infinite' }} />
     </div>
   )
@@ -42,6 +45,9 @@ export default function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/affiliate" element={<Affiliate />} />
           <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
           <Route path="/campaigns/new" element={<PrivateRoute><NewCampaign /></PrivateRoute>} />
           <Route path="/campaigns/:id" element={<PrivateRoute><CampaignDetail /></PrivateRoute>} />
