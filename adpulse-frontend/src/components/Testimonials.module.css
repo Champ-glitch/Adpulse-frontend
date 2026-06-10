@@ -1,0 +1,50 @@
+.wrap { display: flex; flex-direction: column; gap: 1.5rem; }
+.card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  min-height: 160px;
+  transition: all 0.4s ease;
+}
+.quote {
+  position: absolute; top: 1rem; right: 1.5rem;
+  font-size: 5rem; color: rgba(232,255,71,0.08);
+  font-family: Georgia, serif; line-height: 1;
+  pointer-events: none;
+}
+.text { font-size: 1rem; line-height: 1.75; color: var(--text-primary); margin-bottom: 1.5rem; font-style: italic; }
+.meta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.avatar {
+  width: 42px; height: 42px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem; font-weight: 700; flex-shrink: 0;
+}
+.name { font-weight: 700; font-size: 0.9rem; }
+.role { font-size: 0.775rem; color: var(--text-muted); }
+.result {
+  margin-left: auto;
+  padding: 0.3rem 0.875rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.dots { display: flex; gap: 0.5rem; justify-content: center; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border-bright); border: none; cursor: pointer; transition: all 0.3s; }
+.dotActive { background: var(--pulse); width: 24px; border-radius: 4px; }
+
+.cards { display: flex; gap: 0.75rem; overflow-x: auto; padding-bottom: 4px; }
+.cards::-webkit-scrollbar { height: 0; }
+.miniCard {
+  display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+  padding: 0.875rem 1rem; border-radius: var(--radius);
+  background: var(--bg-secondary); border: 1px solid var(--border);
+  cursor: pointer; transition: all 0.2s ease; flex-shrink: 0; min-width: 80px;
+}
+.miniCard:hover { border-color: var(--border-bright); }
+.miniCardActive { border-color: rgba(232,255,71,0.3); background: var(--pulse-dim); }
+.miniAvatar { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; }
+.miniName { font-size: 0.72rem; font-weight: 600; }
+.miniPlatform { font-size: 0.65rem; color: var(--text-muted); }

@@ -1,0 +1,62 @@
+.overlay {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(7,7,13,0.8);
+  backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 1.5rem;
+  animation: fadeUp 0.3s ease both;
+}
+.popup {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid rgba(232,255,71,0.2);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  max-width: 420px; width: 100%;
+  text-align: center;
+  box-shadow: 0 24px 80px rgba(232,255,71,0.08);
+  animation: fadeUp 0.4s ease both;
+}
+.close {
+  position: absolute; top: 1rem; right: 1rem;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--bg-secondary); border: 1px solid var(--border);
+  color: var(--text-muted); font-size: 0.75rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--transition);
+}
+.close:hover { color: var(--text-primary); border-color: var(--border-bright); }
+.badge {
+  display: inline-block; padding: 0.35rem 1rem; border-radius: 999px;
+  background: var(--pulse-dim); border: 1px solid rgba(232,255,71,0.2);
+  color: var(--pulse); font-size: 0.78rem; font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+.popup h2 {
+  font-family: var(--font-display); font-size: 1.6rem; font-weight: 800;
+  letter-spacing: -0.5px; margin-bottom: 0.75rem;
+}
+.popup p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem; }
+.highlight { color: var(--pulse); -webkit-text-fill-color: var(--pulse); }
+.offer { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.75rem; text-align: left; }
+.offerItem {
+  display: flex; align-items: center; gap: 0.625rem;
+  font-size: 0.875rem; color: var(--text-secondary);
+  padding: 0.5rem 0.875rem; border-radius: 8px;
+  background: var(--bg-secondary);
+}
+.offerItem span { color: var(--pulse); font-weight: 700; }
+.cta {
+  width: 100%; padding: 0.875rem; border-radius: var(--radius);
+  background: var(--pulse); color: #07070d;
+  font-size: 0.95rem; font-weight: 700;
+  border: none; cursor: pointer; transition: all var(--transition);
+  margin-bottom: 0.75rem;
+}
+.cta:hover { background: #d4ea3a; transform: translateY(-1px); }
+.skip {
+  background: none; border: none; cursor: pointer;
+  font-size: 0.78rem; color: var(--text-muted);
+  transition: color var(--transition);
+}
+.skip:hover { color: var(--text-secondary); }

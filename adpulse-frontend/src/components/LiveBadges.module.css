@@ -1,0 +1,32 @@
+.visitors {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 0.4rem 1rem; border-radius: 999px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  font-size: 0.8rem; color: var(--text-secondary);
+}
+.visitors strong { color: var(--text-primary); }
+.liveDot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #4dffd4; flex-shrink: 0;
+  box-shadow: 0 0 8px rgba(77,255,212,0.6);
+  animation: blink 1.5s ease infinite;
+}
+
+.countdown {
+  display: inline-flex; align-items: center; gap: 1rem;
+  padding: 0.625rem 1.25rem; border-radius: var(--radius);
+  background: rgba(255,77,109,0.07);
+  border: 1px solid rgba(255,77,109,0.18);
+  flex-wrap: wrap; justify-content: center;
+}
+.countdownLabel { font-size: 0.825rem; color: #ff4d6d; font-weight: 600; }
+.timer { display: flex; align-items: center; gap: 0.375rem; }
+.timeUnit { display: flex; flex-direction: column; align-items: center; }
+.timeValue {
+  font-family: var(--font-display); font-size: 1.1rem; font-weight: 800;
+  color: var(--text-primary); line-height: 1;
+  background: var(--bg-card); border: 1px solid var(--border);
+  padding: 0.2rem 0.5rem; border-radius: 6px; min-width: 34px; text-align: center;
+}
+.timeLabel { font-size: 0.6rem; color: var(--text-muted); margin-top: 3px; }
+.timeSep { font-size: 1.1rem; font-weight: 800; color: #ff4d6d; margin-bottom: 8px; }

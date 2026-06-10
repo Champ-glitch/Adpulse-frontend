@@ -1,0 +1,43 @@
+.banner {
+  position: fixed; bottom: 24px; left: 24px;
+  right: 100px; /* avoid WhatsApp button */
+  z-index: 998;
+  animation: fadeUp 0.5s ease both;
+  max-width: 620px;
+}
+.inner {
+  background: var(--bg-card);
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem;
+  flex-wrap: wrap;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  backdrop-filter: blur(12px);
+}
+.left { display: flex; align-items: flex-start; gap: 1rem; flex: 1; min-width: 200px; }
+.icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+.left strong { display: block; font-size: 0.875rem; font-weight: 700; margin-bottom: 3px; }
+.left p { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.5; }
+.left a { color: var(--pulse); }
+.actions { display: flex; gap: 0.625rem; flex-shrink: 0; }
+.decline {
+  padding: 0.5rem 1rem; border-radius: 8px;
+  border: 1px solid var(--border-bright);
+  color: var(--text-secondary); font-size: 0.8rem;
+  background: none; cursor: pointer; transition: all var(--transition);
+}
+.decline:hover { color: var(--text-primary); }
+.accept {
+  padding: 0.5rem 1.25rem; border-radius: 8px;
+  background: var(--pulse); color: #07070d;
+  font-size: 0.8rem; font-weight: 700;
+  border: none; cursor: pointer; transition: all var(--transition);
+}
+.accept:hover { background: #d4ea3a; }
+@media (max-width: 600px) {
+  .banner { left: 12px; right: 12px; bottom: 80px; max-width: 100%; }
+  .inner { flex-direction: column; }
+  .actions { width: 100%; }
+  .accept, .decline { flex: 1; text-align: center; }
+}
